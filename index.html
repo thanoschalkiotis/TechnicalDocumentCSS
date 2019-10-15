@@ -16,7 +16,14 @@
 						<li><a class="secondary-link" href="#Browser_support">Browser support</a></li>
 					</ul> 
 				</li>
-				<li><a class="nav-link" href="#Getting_started_with_CSS">Getting started with CSS</a></li>
+				<li><a class="nav-link" href="#Getting_started_with_CSS">Getting started with CSS</a> 
+					<ul>
+						<li><a class="secondary-link" href="#Starting_with_some_HTML">Starting with some HTML</a></li>
+						<li><a class="secondary-link" href="#Adding_CSS_to_our_document">Adding CSS to our document</a></li>
+						<li><a class="secondary-link" href="#Styling_HTML_elements">Styling HTML elements</a></li>
+						<li><a class="secondary-link" href="#Changing_the_default_behavior_of_elements">Changing the default behavior of elements</a></li>
+					</ul>
+				</li>
 				<li><a class="nav-link" href="#How_CSS_is_structured">How CSS is structured</a></li>
 				<li><a class="nav-link" href="#How_CSS_works">How CSS works</a></li>
 				<li><a class="nav-link" href="#Reference">Reference</a></li>
@@ -80,6 +87,63 @@
 			<section class="main-section" id="Getting_started_with_CSS">
 				<header>Getting started with CSS</header>
 				<p>In this article we will take a simple HTML document and apply CSS to it, learning some practical things about the language along the way.</p>
+				<div>Prerequisites: 	Basic computer literacy, basic software installed, basic knowledge of working with files, and HTML basics (study Introduction to HTML.)
+               Objective: 	To understand the basics of linking a CSS document to an HTML file, and be able to do simple text formatting with CSS.</div>
+               <h3 id="Starting_with_some_HTML">Starting with some HTML</h3>
+               <p>Our starting point is an HTML document. You can copy the code from below if you want to work on your own computer. Save the code below as index.html in a folder on your machine.</p>
+               <code><!doctype html><!--
+				     <html lang="en">
+				   <head>
+				    <meta charset="utf-8">
+				    <title>Getting started with CSS</title>
+				</head>
+
+				<body>
+				    
+				    <h1>I am a level one heading</h1>
+
+				    <p>This is a paragraph of text. In the text is a <span>span element</span> 
+				and also a <a href="http://example.com">link</a>.</p>
+
+				    <p>This is the second paragraph. It contains an <em>emphasized</em> element.</p>
+
+				    <ul>
+				        <li>Item one</li>
+				        <li>Item two</li>
+				        <li>Item <em>three</em></li>
+				    </ul>
+
+				</body>
+
+				</html> --> 
+			  	</code>
+			  	<p class="note">Note: If you are reading this on a device or an environment where you can't easily create files, then don't worry — live code editors are provided below to allow you to write example code right here in the page.</p>
+			  	<h3 id="Adding_CSS_to_our_document">Adding CSS to our document</h3>
+			  	<p>The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it to use. There are three different ways to apply CSS to an HTML document that you'll commonly come across, however, for now, we will look at the most usual and useful way of doing so — linking CSS from the head of your document.</p>
+			  	<p>Create a file in the same folder as your HTML document and save it as styles.css. The .css extension shows that this is a CSS file.</p>
+			  	<p>o link styles.css to index.html add the following line somewhere inside the &lthead&gt of the HTML document:</p>
+			  	<code>&lt;link rel="stylesheet" href="styles.css"></code>
+			  	<p>This &lt;link> element tells the browser that we have a stylesheet, using the rel attribute, and the location of that stylesheet as the value of the href attribute. You can test that the CSS works by adding a rule to styles.css. Using your code editor add the following to your CSS file:</p>
+			  	<code>h1 {
+  					color: red;
+						}
+					</code>
+				<p>Save your HTML and CSS files and reload the page in a web browser. The level one heading at the top of the document should now be red. If that happens, congratulations — you have successfully applied some CSS to an HTML document. If that doesn't happen, carefully check that you've typed everything correctly.</p>
+				<h3 id="Styling_HTML_elements">Styling HTML elements</h3>
+				<p>By making our heading red we have already demonstrated that we can target and style an HTML element. We do this by targetting an element selector — this is a selector that directly matches an HTML element name. To target all paragraphs in the document you would use the selector p. To turn all paragraphs green you would use:</p>
+				<code>p { 
+ 					 color: green;
+					}
+				</code>
+				<p>You can target multiple selectors at once, by separating the selectors with a comma. If I want all paragraphs and all list items to be green my rule looks like this:</p>
+				<code>p, li {
+    				color: green;
+					}
+				</code>
+				<h3 id="Changing_the_default_behavior_of_elements">Changing the default behavior of elements</h3>
+				<p>When we look at a well-marked up HTML document, even something as simple as our example, we can see how the browser is making the HTML readable by adding some default styling. Headings are large and bold and our list has bullets. This happens because browsers have internal stylesheets containing default styles, which they apply to all pages by default; without them all of the text would run together in a clump and we would have to style everything from scratch. All modern browsers display HTML content by default in pretty much the same way.</p>
+		  		
+
 			</section>
 			<section class="main-section" id="How_CSS_is_structured">
 				<header>How CSS is structured</header>
